@@ -9,13 +9,23 @@
  * @author miroslav
  */
 public class Product {
-    public String name, url;
-    public double price;
-    
-    
+    protected String name, url;
+    protected double price;
+    protected static int count = 0;
+    protected int id;
+
     public Product(String name, String url, double price) {
         this.name = name;
         this.url = url;
         this.price = price;
+        count++;
+        this.id = count;
+    }
+
+    public Product(String name, double price) {
+        this.name = name;
+        this.price = price;
+        count++;
+        this.id = count;
     }
 }
